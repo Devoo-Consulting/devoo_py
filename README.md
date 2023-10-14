@@ -1,5 +1,6 @@
 # devoo_py
-
+Monotone ONE-IN-THREE SAT
+----- 
 Instance: A Boolean formula $\phi$ in 3CNF with no negated variables.
 
 Question: Is there a truth assignment for $\phi$ such that each clause contains exactly one true literal?
@@ -92,7 +93,7 @@ s SATISFIABLE
 4 = 4999999999999999/15000000000000000
 ```
 
-which means the variables $x_{1}$ and $x_{4}$ are true (when the output values are lesser than $\frac{1}{3})
+which means this is an instance of Monotone ONE-IN-THREE SAT just using the variables $x_{1}$ and $x_{4}$ as true (a variable is true when the real number output value is lesser than $\frac{1}{3}$)
 
 # Code
 
