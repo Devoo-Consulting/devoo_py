@@ -69,17 +69,10 @@ git clone https://github.com/Devoo-Consulting/devoo_py.git
 cd devoo_py
 ```
 
-On Windows within devoo_py directory run
+On devoo_py directory run
 
 ```
-.\starexec_run_default.bat file.cnf
-```
-
-On Linux within devoo_py directory run
-
-```
-chmod +x starexec_run_default.sh
-./starexec_run_default.sh file.cnf
+python solver.py file.cnf
 ```
 
 Finally, it would obtain in the console output:
