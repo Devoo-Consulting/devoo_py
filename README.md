@@ -1,4 +1,4 @@
-# devoo_py
+# DEVOO PY
 Monotone ONE-IN-THREE SAT
 ----- 
 Instance: A Boolean formula $\phi$ in 3CNF with no negated variables.
@@ -18,14 +18,14 @@ Example
 
 Instance: The Boolean formula $(x_{1} \vee x_{2} \vee x_{3}) \wedge (x_{2} \vee x_{3} \vee x_{4}) \wedge (x_{3} \vee x_{4} \vee x_{5}) \wedge (x_{4} \vee x_{5} \vee x_{2}) \wedge (x_{5} \vee x_{1} \vee x_{2})$ where $\vee$ (OR) and $\wedge$ (AND) are logic operations.
 
-Answer: The formula has a truth assignment such that each clause contains a true literal when only the variables $x_{1}$ and $x_{4}$ are true.
+Answer: The formula has a truth assignment such that each clause contains a true literal when only the variables $x_{1}$ and $x_{4}$ have a true value.
 
 Input of this project
 -----
 
 The input is on [DIMACS](http://www.satcompetition.org/2009/format-benchmarks2009.html) formula with the extension .cnf.
   
-Let's take the **file.cnf** from our previous Boolean formula $(x_{1} \vee x_{2} \vee x_{3}) \wedge (x_{2} \vee x_{3} \vee x_{4}) \wedge (x_{3} \vee x_{4} \vee x_{5}) \wedge (x_{4} \vee x_{5} \vee x_{2}) \wedge (x_{5} \vee x_{1} \vee x_{2})$ is
+The **file.cnf** on DIMACS format for $(x_{1} \vee x_{2} \vee x_{3}) \wedge (x_{2} \vee x_{3} \vee x_{4}) \wedge (x_{3} \vee x_{4} \vee x_{5}) \wedge (x_{4} \vee x_{5} \vee x_{2}) \wedge (x_{5} \vee x_{1} \vee x_{2})$ is
 ```  
 p cnf 5 5
 1 2 3 0
@@ -93,7 +93,7 @@ s SATISFIABLE
 4 = 4999999999999999/15000000000000000
 ```
 
-which means this is an instance of Monotone ONE-IN-THREE SAT just using the variables $x_{1}$ and $x_{4}$ as true (a variable is true when the real number output value is lesser than $\frac{1}{3}$)
+which means the Boolean formula in the **file.cnf** on DIMACS format belongs to Monotone ONE-IN-THREE SAT just using the variables $x_{1}$ and $x_{4}$ as true (a variable is true when the real number output value is lesser than $\frac{1}{3}$)
 
 # Code
 
@@ -102,8 +102,8 @@ which means this is an instance of Monotone ONE-IN-THREE SAT just using the vari
 # Complexity
 
 ````diff
-+ The reduction runs in polynomial time: We reduce Monotone ONE-IN-THREE SAT to a Linear System of Constraints.
-- The whole polynomial time algorithm is based on the linear optimization with real variables without any objective to maximize or minimize.
++ We reduce Monotone ONE-IN-THREE SAT to a Linear System of Constraints in linear time.
++ The linear optimization with real variables can be solved in polynomial time.
 ````
 
 # Acknowledgement
