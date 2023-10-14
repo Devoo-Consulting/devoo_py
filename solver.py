@@ -15,16 +15,17 @@ log = False
 timed = False
 started = 0.0
 
-def logging(message, elapsed = 0.0):
-    if log and timed and elapsed > 0.0:
-        print(message + (f" timed {elapsed} milliseconds elapsed time" if timed else ""))
-    elif log:
+def logging(message):
+    if log:
         print(message)
 
 def solve(clauses, total):
+    
+    logging("Start building the linear system")
     if timed:
         started = time.time()
-    logging("Start building the linear system")
+
+    # Build the linear system  
     s = z3.Solver()
     x = [ z3.Real('x%s' % (i + 1)) for i in range(total) ]
     for i in range(total):
@@ -35,21 +36,23 @@ def solve(clauses, total):
         s.add(x[list[0]-1] + x[list[2]-1] > 2.0/3.0)
         s.add(x[list[1]-1] + x[list[2]-1] > 2.0/3.0)
     if timed:
-        logging("Done building the linear system", time.time() - started)
+        logging(f"Done building the linear system in {(time.time() - started) * 1000.0} milliseconds")
     else:
         logging("Done building the linear system")
 
+
+    logging("Start solving the linear system")  
     if timed:
         started = time.time()
-
-    logging("Start solving the linear system")    
+    
+    #Solve the linear system
     result = s.check()
 
     if timed:
-        logging("Done solving the linear system", time.time() - started)
+        logging(f"Done solving the linear system in: {(time.time() - started) * 1000.0} milliseconds")
     else:
         logging("Done solving the linear system")
-        
+
     if result == z3.unsat:
         print("s UNSATISFIABLE")
     elif result == z3.unknown:
@@ -83,9 +86,6 @@ if __name__ == "__main__":
     log = args.verbose
     timed = args.timer
 
-
-
-    
     #Read and parse a dimacs file
     logging("Pre-processing started")
     if timed:
@@ -100,8 +100,7 @@ if __name__ == "__main__":
     clauses = parse_dimacs(asserts[1:])
 
     if timed:
-        duration = time.time() - started
-        logging(f"Pre-processing done in: {duration} milliseconds elapsed time")
+        logging(f"Pre-processing done in: {(time.time() - started) * 1000.0} milliseconds")
     else:
         logging("Pre-processing done")
     # NP-complete Solver
