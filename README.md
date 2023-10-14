@@ -108,7 +108,7 @@ which means the Boolean formula in the **file.cnf** on DIMACS format belongs to 
 
 # Acknowledgement
 
-- The author wishes to thank the mathematician Arthur Rubin for his constructive comments and Luis Antonio Fonseca (CEO of DEVOO CONSULTING.) for his support.
+- The author wishes to thank the mathematician Arthur Rubin for his constructive comments.
  
 # License
 - MIT.
