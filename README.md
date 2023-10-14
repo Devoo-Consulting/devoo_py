@@ -65,7 +65,7 @@ pip install z3-solver
 To build and run from the command prompt:
 
 ```
-git clone https://github.com/Devoo-Consulting/devoo_py.git
+git clone https://github.com/frankvegadelgado/devoo_py.git
 cd devoo_py
 ```
 
