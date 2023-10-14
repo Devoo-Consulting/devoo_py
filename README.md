@@ -1,5 +1,5 @@
 # DEVOO PY
-Monotone ONE-IN-THREE SAT
+Monotone ONE-IN-THREE 3SAT
 ----- 
 Instance: A Boolean formula $\phi$ in 3CNF with no negated variables.
 
@@ -86,7 +86,7 @@ x3 = 10000000000000001/30000000000000000
 x2 = 10000000000000001/30000000000000000
 ```
 
-which means the Boolean formula in the **file.cnf** on DIMACS format belongs to Monotone ONE-IN-THREE SAT just using the variables $x_{1}$ and $x_{4}$ as true (a variable is true when the real number output value is lesser than $\frac{1}{3}$)
+which means the Boolean formula in the **file.cnf** on DIMACS format belongs to Monotone ONE-IN-THREE 3SAT just using the variables $x_{1}$ and $x_{4}$ as true (a variable is true when the real number output value is lesser than $\frac{1}{3}$)
 
 On the same input we can run the options
 
@@ -141,7 +141,7 @@ x2 = 10000000000000001/30000000000000000
 # Complexity
 
 ````diff
-+ We reduce Monotone ONE-IN-THREE SAT to a Linear System of Constraints in linear time.
++ We reduce Monotone ONE-IN-THREE 3SAT to a Linear System of Constraints in linear time.
 + The linear optimization with real variables can be solved in polynomial time.
 ````
 

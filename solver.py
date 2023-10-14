@@ -1,4 +1,4 @@
-#                  Monotone ONE-IN-THREE SAT Solver
+#                  Monotone ONE-IN-THREE 3SAT Solver
 #                          Frank Vega
 #                        October 14, 2023
 #        We use Z3 that is a theorem prover from Microsoft Research.
@@ -105,7 +105,7 @@ if __name__ == "__main__":
         logging(f"Pre-processing done in: {(time.time() - started) * 1000.0} milliseconds")
     else:
         logging("Pre-processing done")
-    # Polynomial Time Reduction from Monotone ONE-IN-THREE SAT to Linear programming
+    # Polynomial Time Reduction from Monotone ONE-IN-THREE 3SAT to Linear programming
     reduction = polynomial_time_reduction(clauses, total)
     # Solve Linear programming in Polynomial Time
     solve_linear_system(reduction)
