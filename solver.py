@@ -19,7 +19,7 @@ def logging(message):
     if log:
         print(message)
 
-def solve(clauses, total):
+def polynomial_time_reduction(clauses, total):
     
     logging("Start building the linear system")
     if timed:
@@ -36,10 +36,12 @@ def solve(clauses, total):
         s.add(x[list[0]-1] + x[list[2]-1] > 2.0/3.0)
         s.add(x[list[1]-1] + x[list[2]-1] > 2.0/3.0)
     if timed:
-        logging(f"Done building the linear system in {(time.time() - started) * 1000.0} milliseconds")
+        logging(f"Done building the linear system in: {(time.time() - started) * 1000.0} milliseconds")
     else:
         logging("Done building the linear system")
-
+    return s
+    
+def solve_linear_system(s):
 
     logging("Start solving the linear system")  
     if timed:
@@ -103,5 +105,7 @@ if __name__ == "__main__":
         logging(f"Pre-processing done in: {(time.time() - started) * 1000.0} milliseconds")
     else:
         logging("Pre-processing done")
-    # NP-complete Solver
-    solve(clauses, total)
+    # Polynomial Time Reduction from Monotone ONE-IN-THREE SAT to Linear programming
+    reduction = polynomial_time_reduction(clauses, total)
+    # Solve Linear programming in Polynomial Time
+    solve_linear_system(reduction)
