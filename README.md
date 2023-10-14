@@ -123,7 +123,7 @@ It would obtain a more verbose in the console output measuring the elapsed time:
 Pre-processing started
 Pre-processing done in: 12.96544075012207 milliseconds
 Start building the linear system
-Done building the linear system in 9.973764419555664 milliseconds
+Done building the linear system in: 9.973764419555664 milliseconds
 Start solving the linear system
 Done solving the linear system in: 7.977724075317383 milliseconds
 s SATISFIABLE
