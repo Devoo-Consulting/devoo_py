@@ -31,6 +31,7 @@ def polynomial_time_reduction(clauses, total):
     x = [ z3.Real('%s' % (i + 1)) for i in range(total) ]
     for i in range(total):
         s.add(x[i] >= 0.0)
+        s.add(x[i] != z3.Q(1, 3))
     for list in clauses:
         s.add(x[list[0]-1] + x[list[1]-1] + x[list[2]-1] == 1.0)
         s.add(x[list[0]-1] + x[list[1]-1] > 2.0/3.0)
