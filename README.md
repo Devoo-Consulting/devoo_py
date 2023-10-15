@@ -79,11 +79,7 @@ Finally, it would obtain in the console output:
 
 ```
 s SATISFIABLE
-x1 = 4999999999999999/15000000000000000
-x4 = 4999999999999999/15000000000000000
-x5 = 10000000000000001/30000000000000000
-x3 = 10000000000000001/30000000000000000
-x2 = 10000000000000001/30000000000000000
+v -2 4 -3 1 -5 0
 ```
 
 which means the Boolean formula in the **file.cnf** on DIMACS format belongs to Monotone ONE-IN-THREE 3SAT just using the variables $x_{1}$ and $x_{4}$ as true (a variable is true when the real number output value is lesser than $\frac{1}{3}$)
@@ -104,11 +100,7 @@ Done building the linear system
 Start solving the linear system
 Done solving the linear system
 s SATISFIABLE
-x1 = 4999999999999999/15000000000000000
-x4 = 4999999999999999/15000000000000000
-x5 = 10000000000000001/30000000000000000
-x3 = 10000000000000001/30000000000000000
-x2 = 10000000000000001/30000000000000000
+v -2 4 -3 1 -5 0
 ```
 
 and the another option
@@ -127,11 +119,7 @@ Done building the linear system in: 9.973764419555664 milliseconds
 Start solving the linear system
 Done solving the linear system in: 7.977724075317383 milliseconds
 s SATISFIABLE
-x1 = 4999999999999999/15000000000000000
-x4 = 4999999999999999/15000000000000000
-x5 = 10000000000000001/30000000000000000
-x3 = 10000000000000001/30000000000000000
-x2 = 10000000000000001/30000000000000000
+v -2 4 -3 1 -5 0
 ```
 
 # Code

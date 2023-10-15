@@ -1,12 +1,13 @@
 #                  Monotone ONE-IN-THREE 3SAT Solver
 #                          Frank Vega
-#                        October 14, 2023
+#                        October 15, 2023
 #        We use Z3 that is a theorem prover from Microsoft Research.
 
 import argparse
 import sys
 import z3
 import time
+import fractions
 z3.set_option(model=True)
 #z3.set_option(precision=10)
 #z3.set_option(rational_to_decimal=True)
@@ -27,7 +28,7 @@ def polynomial_time_reduction(clauses, total):
 
     # Build the linear system  
     s = z3.Solver()
-    x = [ z3.Real('x%s' % (i + 1)) for i in range(total) ]
+    x = [ z3.Real('%s' % (i + 1)) for i in range(total) ]
     for i in range(total):
         s.add(x[i] >= 0.0)
     for list in clauses:
@@ -62,9 +63,14 @@ def solve_linear_system(s):
     else:
         m = s.model()
         print("s SATISFIABLE")
+        sys.stdout.write("v ")
         for d in m.decls():
-            print ("%s = %s" % (d.name(), m[d]))   
-
+            if fractions.Fraction('%s' % m[d]) > fractions.Fraction(1, 3): 
+                sys.stdout.write("-%s " % (d.name()))
+            else:
+                sys.stdout.write("%s " % (d.name()))
+        print("0")
+        
 def parse_dimacs(asserts):
     result = []
     for strvar in asserts:
