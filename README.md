@@ -7,8 +7,6 @@ Question: Is there a truth assignment for $\phi$ such that each clause contains 
  
 **Remark: This problem is NP-complete (If any NP-complete can be solved in polynomial time, then $P = NP$)**.
 
-- Note: This algorithm is based on the mathematical background of the following draft: [On Feasibly Solving NP-complete Problems](https://www.researchgate.net/publication/374551182_On_Feasibly_Solving_NP-complete_Problems) 
-
 # Theory
 
 - A literal in a Boolean formula is an occurrence of a variable or its negation. A Boolean formula is in conjunctive normal form, or CNF, if it is expressed as an AND of clauses, each of which is the OR of one or more literals. A truth assignment for a Boolean formula $\phi$ is a set of values for the variables in $\phi$. 
